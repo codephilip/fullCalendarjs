@@ -1,0 +1,14 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 5 # Test duration in seconds
+      arrivalRate: 1 # Number of new virtual users arriving every second
+      #rampTo: 2
+  defaults:
+    headers:
+      Content-Type: "application/json"
+    timeout: 30000
+scenarios:
+  - flow:
+      - get:
+          url: "/api/restfm"
